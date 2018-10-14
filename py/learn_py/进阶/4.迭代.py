@@ -37,12 +37,12 @@ else:
 list=[1,3,2,5,6]
 
 def findMinAndMax(list):
-    for i in range(len(list)):
+    for i in range(len(list)):  # 从第零个到第n
         for j in range(i):
-            if list[i]<list[j]:
+            if list[i]<list[j]:  # 把m与0到 m-1 比较
                 #print(list)
-                list.insert(j, list.pop(i))
-                #print(list)
+                list.insert(j, list.pop(i))  # 若小于前面的，把m个拿出，插入到前面大数的位置
+                print(list)
     return(list[-1],list[0])
 
 print(findMinAndMax(list))
