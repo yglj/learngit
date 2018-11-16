@@ -1,0 +1,18 @@
+tcp/ip 协议族
+http 用于服务器与浏览器间传输数据的协议
+类比快递的过程
+
+应用层（http） -> 传输层(tcp/udp 端口) -> 网络层（ip） -> 数据链路层（mac地址） 
+  
+
+应用程序 
+==
+tcp/udp
+==
+ip，arp ， icmp ， igmp , rarp
+==
+网络接口
+
+原始socket
+
+osi标准
