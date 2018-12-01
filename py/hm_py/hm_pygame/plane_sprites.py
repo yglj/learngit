@@ -54,7 +54,7 @@ class Enemy(GameSprite):
     """
     def __init__(self):
         super().__init__('images/enemy1.png')
-        self.speed = random.randint(1, 4)   # 初始随机速度
+        self.speed = (random.random() + 0.2) * 3   # 初始随机速度
         self.rect.bottom = 0   # 初始位置坐标
         max_x = SCREEN_RECT.width - self.rect.width
         self.rect.x = random.randint(0, max_x)
@@ -93,8 +93,11 @@ class Hero(GameSprite):
         英雄机移动控制
         :return:
         """
-        self.rect.x += x
-        self.rect.y += y
+        self.rect.x, self.rect.y = pygame.mouse.get_pos()
+        self.rect.x -= self.rect.width // 2
+        self.rect.y -= self.rect.height // 2
+        # self.rect.x += x
+        # self.rect.y += y
 
         if self.rect.x <= 0:
             self.rect.x = 0
@@ -121,6 +124,7 @@ class Bullet(GameSprite):
 
         :return:
         """
+        self.speed = 5
         self.rect.y -= self.speed
         if self.rect.y < 0:
             self.kill()
