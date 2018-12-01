@@ -56,7 +56,7 @@ def tree(path, depth=0):
     if os.listdir(path):
         gl_dir_num += 1
         for file in os.listdir(dir_name):
-            print(' `  ' * depth + '|')
+            print('  ' * depth + '|')
             print('  ' * depth + '——' * depth, file)
             dir_name = os.path.join(path, file)
             if os.path.isdir(dir_name):

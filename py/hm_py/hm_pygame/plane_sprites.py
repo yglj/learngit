@@ -53,6 +53,7 @@ class Enemy(GameSprite):
     使用定时器set_timer()创建敌机， 第一个参数是事件代号，第二个参数是触发间隔
     """
     def __init__(self):
+        # GameSprite.__init__(self, 'images/enemy1.png')
         super().__init__('images/enemy1.png')
         self.speed = (random.random() + 0.2) * 3   # 初始随机速度
         self.rect.bottom = 0   # 初始位置坐标

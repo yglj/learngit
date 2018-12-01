@@ -16,5 +16,39 @@ for temp in obj:
  2.调用iter函数得到obj对象的__iter__方法的返回值
  3.__iter__方法的返回值是一个迭代器
  4.for循环调用__next__方法进行遍历
- 
+ 5.raise StopIteration 停止循环
 
+ 迭代器的应用？
+存数据，用时取，占用大量内存空间
+存生成数据的代码，用时生成
+py2
+range() ->list
+xrange() ->generator
+py3
+range = xrange
+Fibonacci斐波那契数列
+除了for循环，list()，tuple()也需要迭代器
+
+生成器？
+创建生成器
+[x for x in range(n)] -> list
+(x for x in range(n)) -> generator
+二.
+包含yield的函数，就是一个生成器
+
+生成器是一种特殊的迭代器
+暂停？ 中断？
+通过异常判断生成器已经结束
+
+.send() 唤醒生成器，可以向生成器里传参数
+下次调用函数从yield开始
+
+使用yield并发完成多任务
+
+
+pip3 安装到python3
+
+
+协程依赖线程，线程依赖进程
+
+给程序打补丁

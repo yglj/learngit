@@ -1,0 +1,40 @@
+
+1.GIL 全局解释器锁
+
+pass 空语句
+假的多线程，并不是并发
+cpython解释器
+保证同一时刻只有一个线程在运行
+多核cpu使用多进程
+计算型密集型，适合具有io密集型程序（延时，耗时）
+gcc *.c
+./*.out
+解决方法：换解释器，调用其他语言（c）让线程执行
+
+2.深拷贝，浅拷贝
+
+3.私有化
+__xx 无法在外部访问
+_x 禁止导入
+__xx__ 特殊方法
+
+4.路径搜索
+sys.path
+sys.path.append()
+sys.path.insert()
+import 避免重复导入
+from imp import reload
+多模块导入时注意点：from xx import xx
+
+5.继承、封装、 多态
+__class__
+__dict__
+
+6.多继承中MRO顺序
+重载就是重写
+
+调用父类__init__方法
+父类名.__init__(self,...)
+super().__init__()
+__mro__
+
