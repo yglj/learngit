@@ -6,8 +6,8 @@
 
 """
 
-from hm_pygame.plane_sprites import *
-
+# from hm_pygame.plane_sprites import *
+from plane_sprites import *
 
 class PlaneGame:
     """
@@ -19,7 +19,7 @@ class PlaneGame:
         self.clock = pygame.time.Clock()
         self.__create_sprites()
         self.enemy_timer = pygame.time.set_timer(CREATE_ENEMY_EVENT, 1000)  # 设置每秒执行一次的定时器事件
-        self.bullet_timer = pygame.time.set_timer(CREATE_BULLET_EVENT, 500)
+        self.bullet_timer = pygame.time.set_timer(CREATE_BULLET_EVENT, 2你 00)
 
     def __create_sprites(self):
         self.bg1 = BackGround()
@@ -45,8 +45,8 @@ class PlaneGame:
 
             if event.type == CREATE_BULLET_EVENT:
                 bullets = []
-                for i in range(1, 4):
-                    bullet = Bullet(self.hero.rect.centerx, self.hero.rect.y - (i * 20))
+                for i in range(1, 2):
+                    bullet = Bullet(self.hero.rect.centerx, self.hero.rect.y - (i * 10))
                     print('biu')
                     bullets.append(bullet)
                 self.bullet_group.add(bullets)
