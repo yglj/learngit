@@ -1,0 +1,14 @@
+2018-12-25 15:31:09,541 - mini_frame.py[line:245] - INFO: /center锟斤拷锟绞碉拷路锟斤拷锟斤拷.html
+2018-12-25 15:41:51,937 - mini_frame.py[line:245] - INFO: 访问的路径：/index.html
+2018-12-25 15:42:03,254 - mini_frame.py[line:245] - INFO: 访问的路径：/add/000007.html
+2018-12-25 15:42:05,970 - mini_frame.py[line:245] - INFO: 访问的路径：/add/000036.html
+2018-12-25 15:42:08,601 - mini_frame.py[line:245] - INFO: 访问的路径：/add/000036.html
+2018-12-25 15:42:10,937 - mini_frame.py[line:245] - INFO: 访问的路径：/center.html
+2018-12-25 15:42:14,305 - mini_frame.py[line:245] - INFO: 访问的路径：/update/000036.html
+2018-12-25 15:42:17,331 - mini_frame.py[line:245] - INFO: 访问的路径：/update/000036/.html
+2018-12-25 15:42:18,467 - mini_frame.py[line:245] - INFO: 访问的路径：/center.html
+2018-12-25 15:44:09,557 - mini_frame.py[line:245] - INFO: 访问的路径：/update/000036.html
+2018-12-25 15:44:14,157 - mini_frame.py[line:245] - INFO: 访问的路径：/update/000036/%E5%B1%82%E6%AC%A1.html
+2018-12-25 15:44:15,330 - mini_frame.py[line:245] - INFO: 访问的路径：/center.html
+2018-12-25 15:44:49,712 - mini_frame.py[line:245] - INFO: 访问的路径：/%E5%94%8F%E5%98%98%E6%94%B6%E5%88%B0.html
+2018-12-25 15:44:49,714 - mini_frame.py[line:253] - WARNING: url（/%E5%94%8F%E5%98%98%E6%94%B6%E5%88%B0.html）没有对应的函数...
