@@ -78,6 +78,7 @@ class WSGIServer:
 def main():
     # 运行web服务器时指定端口及框架
     if len(sys.argv) == 3:
+        print(sys.argv)
         web_frame = ''
         port = ''
         try:

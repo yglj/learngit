@@ -32,7 +32,7 @@ def registered(parm):
 
 @route('/index.html')
 def index(parm):  # 实现模板文件
-    db = connect(host='localhost', port=3306, user='root', password='', database='stock', charset='utf8')
+    db = connect(host='localhost', port=3306, user='root', password='123456', database='stock', charset='utf8')
     cur = db.cursor()
     cur.execute('select * from info')
     info = cur.fetchall()
@@ -66,7 +66,7 @@ def index(parm):  # 实现模板文件
 @route('/update/(\d+)\.html')
 def index(parm):  # 实现模板文件
     stock_code = parm.group(1)
-    db = connect(host='localhost', port=3306, user='root', password='', database='stock', charset='utf8')
+    db = connect(host='localhost', port=3306, user='root', password='123456', database='stock', charset='utf8')
     cur = db.cursor()
     cur.execute('select * from info')
     cur.execute('select note_info from focus where info_id = (select id from info where code = %s)', (stock_code,))
@@ -89,7 +89,7 @@ def center(parm):  # 实现模板文件
     #     info = '从数据库查询信息...'
     #     content = re.sub(r'\{%content%\}', info, content)  # 替换模板中数据
     #     return content
-    db = connect(host='localhost', port=3306, user='root', password='', database='stock', charset='utf8')
+    db = connect(host='localhost', port=3306, user='root', password='123456', database='stock', charset='utf8')
     cur = db.cursor()
     cur.execute('select a.code,a.short,a.chg,a.turnover,a.price,a.highs,b.note_info '
                 'from info as a inner join focus as  b on a.id = b.info_id')
@@ -132,7 +132,7 @@ def center(parm):  # 实现模板文件
 def add_focus(parm):
     stock_code = parm.group(1)
     print('code:', stock_code)
-    db = connect(host='localhost', port=3306, user='root', password='', database='stock', charset='utf8')
+    db = connect(host='localhost', port=3306, user='root', password='123456', database='stock', charset='utf8')
     cur = db.cursor()
     # 1.判断stock是否存在
     sql = 'select * from info where code = %s;'
@@ -163,7 +163,7 @@ def add_focus(parm):
 def cancel_focus(parm):
     stock_code = parm.group(1)
     print('code:', stock_code)
-    db = connect(host='localhost', port=3306, user='root', password='', database='stock', charset='utf8')
+    db = connect(host='localhost', port=3306, user='root', password='123456', database='stock', charset='utf8')
     cur = db.cursor()
     # 1.判断stock是否存在
     sql = 'select * from info where code = %s;'
@@ -196,7 +196,7 @@ def update_focus(parm):
     remark = parm.group(2)  # url的编码
     remark = urllib.parse.unquote(remark)
     print('code:', stock_code)
-    db = connect(host='localhost', port=3306, user='root', password='', database='stock', charset='utf8')
+    db = connect(host='localhost', port=3306, user='root', password='123456', database='stock', charset='utf8')
     cur = db.cursor()
     # 1.判断stock是否存在
     sql = 'select * from info where code = %s;'
