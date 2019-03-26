@@ -1,0 +1,65 @@
+
+
+ip地址 网络层
+
+ifconfig
+网卡
+ifconfig 网卡名 down/up
+ctrl a / e  命令行头，尾
+
+端口 65535 2^16 应用层
+知名端口：
+http 80
+ftp 21
+
+动态端口：
+应用程序需要网络通信时，动态的向主机申请端口，主机分配可用端口，程序关闭时，释放
+
+查看端口：
+netstat -an
+
+
+socket
+协议 ， 端口 ， ip
+
+sumbline text
+
+vim esc V shift <> 选中缩放行
+
+sudo dhclient 等待分配ip
+
+udp发送不绑定会自动分配port，接收必须绑定端口
+
+公网
+局域网
+私有ip
+10.0.0.0 - 10.255.255.255
+172.16.0.0 - 172.31.255.255
+192.168.0.0 - 192.168.255.255
+
+127.0.0.1 可以表示本机ip地址 等价 localhost 只能本机通信，不能用于与其他网络通信
+
+ sudo dpkg - i *.deb
+
+ 全双工，半双工，单工
+
+ recvform 在没收到数据前会阻塞
+
+ tcp 传输控制协议
+ 面向连接
+ 重传
+ 阻塞/流量控制
+
+tcp
+客户端
+
+
+服务端
+1.创建socket
+2.bind绑定ip和port
+3.listen让socket可以被动链接
+4.accept 等待客服端连接
+5.recv/send接收发送数据
+
+
+

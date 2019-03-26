@@ -6,7 +6,7 @@
 import mysql.connector
 
 try:
-     conn = mysql.connector.connect(user='root',password='123456',database='test')
+     conn = mysql.connector.connect(user='root',password='123456',database='stock')
      cursor = conn.cursor()
      
      cursor.execute('create table lang(id int,language varchar(20) primary key)')

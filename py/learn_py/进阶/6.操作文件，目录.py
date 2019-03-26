@@ -34,27 +34,36 @@ Python的os模块封装了操作系统的目录和文件操作，要注意这些
 
 编写一个程序，能在当前目录以及当前目录的所有子目录下查找文件名包含指定字符串的文件，并打印出相对路径。
 '''
+
 import os,os.path,shutil
-print('os:%s'%os.name)
-#print('\n'.join(os.environ.get('path').split(';')))
-
-#print(os.path.abspath('../../../'))
-ab = os.path.abspath('../../../')
-path = os.path.join(ab,'abandon')  #只是拼出了一个url字符串
-#os.mkdir(path)
-#os.rmdir(path)
-
-
-#win10的cmd里dir就是列出文件详细信息，dir -l的话列出的是磁盘卷序列号
 import datetime
 
-#模仿dos命令行的dir命令
-##for x in os.listdir('.'):
-##     #print(x)
-##     size = os.path.getsize(x) if (not os.path.isdir(x)) else ''
-##     mtime = datetime.datetime.fromtimestamp(os.path.getmtime(x)).strftime('%Y-%m-%d %w %H:%M')
-##     flag = '<DIR>' if os.path.isdir(x) else ''
-##     print('%s\t%s\t%s\t%s\t'%(mtime,flag,size,x))
+def test():
+     print('os:%s'%os.name)
+     print('\n'.join(os.environ.get('path').split(';')))
+     print(os.path.abspath('../../../'))
+     ab = os.path.abspath('../../../')
+     path = os.path.join(ab,'abandon')  #只是拼出了一个url字符串
+     os.mkdir(path)
+     os.rmdir(path)
+
+
+
+# win10的cmd里dir就是列出文件详细信息，dir -l的话列出的是磁盘卷序列号
+# 模仿dos命令行的dir命令
+
+
+def win_dir(string):
+     for x in os.listdir(string):  # '.'
+          # print(x)
+          x = os.path.join(string, x)
+          # 如果不是目录获取文件大小
+          size = os.path.getsize(x) if (not os.path.isdir(x)) else ''   
+          # 格式化创建时间
+          mtime = datetime.datetime.fromtimestamp(os.path.getmtime(x)).strftime('%Y-%m-%d %w %H:%M')
+          # 目录标志
+          flag = '<DIR>' if os.path.isdir(x) else ''
+          print('%s\t%s\t%s\t%s\t'%(mtime,flag,size,x))
 
 
 def find_str(path,string):
@@ -67,8 +76,13 @@ def find_str(path,string):
 
      for cpath in os.listdir(path):
           find_str(os.path.join(path,cpath),string)
+
      
 
-find_str(r'C:\Users\Administrator\Desktop\py','dump')
+# find_str(r'C:\Users\Administrator\Desktop\py','dump')
+
+if __name__ == '__main__':
+     win_dir(r'C:\Users\Public')
+
 
 

@@ -5,4 +5,6 @@ def add(a:int,b:int)->int:
 print(add('hello','you'))
 print(add.__annotations__)
 
+
 c:int = 78
+
