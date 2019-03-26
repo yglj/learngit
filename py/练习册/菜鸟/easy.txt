@@ -1,0 +1,6 @@
+<th lay-data="{field:'ID',sort:true, width:120,align: 'center'}">主键ID</th> 
+<th lay-data="{field:'CaseID',sort:true, width:120,align: 'center'}">案件主键</th> 
+<th lay-data="{field:'UnlawfulLevel1',sort:true, width:120,align: 'center'}">违法行为一级</th> 
+<th lay-data="{field:'UnlawfulLevel2',sort:true, width:120,align: 'center'}">违法行为二级</th> 
+<th lay-data="{field:'UnlawfulLevel3',sort:true, width:120,align: 'center'}">违法行为三级</th> 
+<th lay-data="{field:'Money',sort:true, width:120,align: 'center'}">金额</th> 

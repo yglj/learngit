@@ -1,0 +1,6 @@
+ID	varchar(32)	N	主键ID	自动生成
+CaseID	varchar(32)	Y	案件主键	案件表主键
+UnlawfulLevel1	varchar(32)	Y	违法行为一级	字典项
+UnlawfulLevel2	varchar(32)	Y	违法行为二级	字典项
+UnlawfulLevel3	varchar(32)	Y	违法行为三级	字典项
+Money	decimal(10,4)	Y	金额	
