@@ -1,0 +1,17 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>图书页面</title>
+</head>
+<body>
+<h1>展示书籍：</h1>
+<hr>
+<ul>
+     {% for book in booklist %}
+          <li><a href="show_book/{{book.id}}">{{book.bname}}</a></li>
+          <br>
+     {% endfor %}
+</ul>
+</body>
+</html>

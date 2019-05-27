@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load filter %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .red{
+        background-color:red;
+    }
+    .green{
+        background-color:green;
+    }
+    .yellow{
+        background-color:yellow;
+    }
+    </style>
+</head>
+<body>
+<ul>
+    {% for i in book %}
+{#        nothing in there!<br>#}
+{#    {% empty %}#}
+        {% if i.id|mod %}
+            <li class="red"> {{ forloop.counter }} = {{ i.id }}:{{i.b_title}} -- {{i.pub_date}} >> {{i.comment|length}}</li>
+        {% elif i.id|mods:3 %}
+            <li class="green"> {{ forloop.counter }} = {{ i.id }}: {{i.b_title}} -- {{i.pub_date|date:'Y-m-d'}}</li>
+        {% else %}
+            <li class="yellow"> {{ forloop.counter }} = {{ i.id }}: {{i.b_title}} -- {{i.pub_date}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<br>
+{{ content|default:'&&&&&&&' }}
+</body>
+</html>

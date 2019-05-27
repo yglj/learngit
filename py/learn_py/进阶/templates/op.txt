@@ -1,6 +1,0 @@
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Administrator\Desktop\py\练习册\进阶\6.IO编程-文件读写.py", line 18, in <module>
-    if f:
-NameError: name 'f' is not defined我他妈是个傻逼，蓝色的内容都看不出来，被报错信息骗了

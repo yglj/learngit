@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板转义</title>
+</head>
+<body>
+html转义：
+<br>
+{{ content }}
+<br>
+使用safe过滤器关闭转义：
+{{ content|safe }}
+使用autoescape标签关闭转义：
+{% autoescape off %}
+    {{ content }}
+{% endautoescape %}
+模板硬编码字符串默认不转义，需手动转义：
+{{ test|default:'<h1>hello</h1>'}}
+{{ test|default:'&lt;h1&gt;hello&lt;/h1&gt;'}}
+</body>
+</html>

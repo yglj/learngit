@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HttpRequest</title>
+</head>
+<body>
+请求路径：{{ request.path }}<br>
+提交的数据的编码方式：{{ request.encoding}}
+(一般为utf-8，这个属性是可写的)<br>
+<hr>
+GET：QueryDict类型对象，类似于字典，包含get请求方式的所有参数。
+<p>使用get请求方式：<a href="/show_method/?a=1">ok</a></p>
+<hr>
+POST：QueryDict类型对象，类似于字典，包含post请求方式的所有参数。
+<p>使用post请求方式：</p>
+<form method="post" action="/show_method/">
+    <label>
+        <input type='submit' name="method" value="post">
+    </label>
+</form>
+<hr>
+<p>
+QueryDict对象
+定义在django.http.QueryDict
+HttpRequest对象的属性GET、POST都是QueryDict类型的对象
+与python字典不同，用来处理同一个键带有多个值的情况
+方法get()：根据键获取值
+如果一个键同时拥有多个值将获取最后一个值
+如果键不存在则返回None值，可以设置默认值进行后续处理
+dict.get('键',默认值)
+可简写为
+dict['键']
+方法getlist()：根据键获取值，值以列表返回，可以获取指定键的所有值
+如果键不存在则返回空列表[]，可以设置默认值进行后续处理
+</p>
+<hr>
+<p>get方式：<a href="/show_get/?a=1&b=10&c=python">ok</a></p>
+<hr>
+<p>post方式：</p>
+<form method="post" action="/show_post/">
+    <label>姓名：
+        <input type='text' name="name" >
+    </label>
+    <br><br>
+    <label>性别：</label>
+        <input type="radio" name="gender" value="男">男
+        <input type="radio" name="gender" value="女">女
+
+    <br><br>
+    <label>爱好：</label>
+        吃饭<input type="checkbox" name="hobby" value="吃饭">
+        睡觉<input type="checkbox" name="hobby" value="睡觉">
+        打豆豆<input type="checkbox" name="hobby" value="嘿咻">
+    <br><br>
+    <label>
+        <button type="submit" >提交</button>
+    </label>
+</form>
+</body>
+</html>

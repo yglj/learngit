@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页练习</title>
+    <style>
+        .page{
+            margin: 3px ;
+            border: red solid 1px;
+        }
+    </style>
+    <script src="/ST/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+
+            $.get('/get_prov/',function(data){
+                if(data){
+                    prov = $('#prov');
+                    {#prov.empty();#}
+                    $.each(data['prov'], function(index, item){
+                        {#console.log(index, item);#}
+                        prov.append("<option value= "+item[0]+" >"+item[1]+"</option>");
+                    })
+                }
+            });
+            $('#prov').change(function(){
+                cid = $(this).val();
+                alert('prov:'+cid);
+                $.get('/get_city/'+cid+'/', function(data){
+                    $('#city').empty().append('<option value="">--------请选择城市-------</option>');
+                    $('#county').empty().append('<option value="">--------请选择县区-------</option>');
+                    if(data){
+                        city = $('#city');
+                        $.each(data['city'], function(index, item){
+                            city.append("<option value= "+item[0]+" >"+item[1]+"</option>");
+                        });
+                    }
+                });
+            });
+            $('#city').change(function(){
+                cid = $(this).val();
+                alert('city:'+cid);
+                $.get('/get_county/'+cid+'/', function(data){
+                     $('#county').empty().append('<option value="">--------请选择县区-------</option>');
+                    if(data){
+                        county = $('#county');
+                        $.each(data['county'], function(index, item){
+                            county.append("<option value= "+item[0]+" >"+item[1]+"</option>");
+                        });
+                    }
+                });
+            });
+
+
+        });
+    </script>
+
+</head>
+<body>
+    <ul>
+        {% for area in page.object_list %}
+            <li>{{ area }}</li>
+        {% endfor %}
+    </ul>
+    {% if page.has_previous %}
+        &lt;<a href="{% url 'booktest:page' pid=page.previous_page_number %}">前一页</a>&gt;
+    {% endif %}
+    {% for i in page.paginator.page_range %}
+        {% if pid == i %}
+            {{ pid }}
+        {% else %}
+            <a class="page" href={% url 'booktest:page' pid=i %}> {{ i }} </a>
+        {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+        &lt;<a href="{% url 'booktest:page' pid=page.next_page_number %}">后一页</a>&gt;
+    {% endif %}
+
+    <hr>
+
+    <label for="prov"></label><select name="prov" id="prov">
+        <option value="">--------请选择省份---------</option>
+    </select>
+    <label for="city"></label><select name="city" id="city">
+        <option value="">--------请选择城市-------</option>
+    </select>
+    <label for="county"></label><select name="county" id="county">
+        <option value="">--------请选择县区---------</option>
+    </select>
+
+    <hr>
+   <!-- <label for="">input:</label><input type="text" id="dd"> -->
+</body>
+</html>

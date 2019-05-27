@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<h1>{{ one }}</h1>
+<hr>
+{% load staticfiles %}
+普通链接：<a href="/args1_008/">/args1_008/</a><br> <a href="{% url 'booktest:a1' 002 %}">使用反向解析
+从a1重定向到a2</a><br>
+反向解析：<a href="{% url 'booktest:a2' arg=10001 %}">a2</a>
+<hr>
+<img src="/ST/images/mm.jpg" alt="">
+<hr>
+<br>使用static标签动态生成静态资源路径
+<img src={% static 'images/mm.jpg' %}>
+</body>
+</html>

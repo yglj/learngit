@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JsonResponse</title>
+    <script src="/ST/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#getJson").click(function(){
+                $.get("/json2/", function(data, status){
+                    if (!status) {
+                        return;
+                    }
+                    var ulElem = $("#ulList");
+                    ulElem.append("<li>" + data['a'] + "</li>");
+                    ulElem.append("<li>" + data['b'] + "</li>");
+                    ulElem.append("<li>" + data['c'] + "</li>");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" id="getJson" value="获取json数据">
+<ul id="ulList"></ul>
+<hr>
+<p>在浏览器中使用javascript发起ajax请求时，返回json格式的数据，此处以jquery的get()方法为例。
+    类JsonResponse继承自HttpResponse对象， 被定义在django.http模块中，创建对象时接收字典作为参数。
+JsonResponse对象的content-type为'application/json'。
+</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>父模板文件</title>
+    {% endblock %}
+</head>
+<body>
+{% block one %}
+    <h1>this is parent template file one.</h1>
+{% endblock %}
+{% block two %}
+    <h1>this is parent template file two.</h1>
+{% endblock %}
+</body>
+</html>

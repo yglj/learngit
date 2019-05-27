@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书展示</title>
+</head>
+<body>
+<p><a href="/create_book">点击新增</a></p>
+<hr>
+<ul>
+    {% for book in book_list %}
+        <li>{{ book.b_title }}  --->
+            <a href="/delete_book{{ book.id }}">删除</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

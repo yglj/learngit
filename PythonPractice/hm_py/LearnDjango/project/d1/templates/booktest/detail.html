@@ -1,0 +1,17 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>图书详细页</title>
+</head>
+<body>
+<h1>{{book}}</h1>
+<hr>
+<ul>
+     {% for role in roles %}
+          <li>{{role.rname}}---- {{role.comment}}</li>
+          <br>
+     {% endfor %}
+</ul>
+</body>
+</html>
